@@ -1,4 +1,4 @@
-# fly.toml app configuration file generated for tayron on 2025-08-17T14:50:28-06:00
+# fly.toml app configuration file generated for churroland on 2025-08-21T15:42:05Z
 #
 # See https://fly.io/docs/reference/configuration/ for information about how to use this file.
 #
@@ -20,3 +20,4 @@ primary_region = 'mia'
   memory = '1gb'
   cpu_kind = 'shared'
   cpus = 1
+  memory_mb = 1024
