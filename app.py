@@ -5,10 +5,10 @@ app.secret_key = "supersecretkey"
 
 # Productos disponibles
 PRODUCTS = [
-    {"id": 1, "name": "Churro Arcoiris", "price": 2000, "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQS6W7wzGPjTe1Dh8Bx_U-el19rwVaUiOhMRQ&s"},
-#   {"id": 1, "name": "Churro Arcoiris", "price": 2000, "image": "/static/churro_arcoiris.jpg"}
-    {"id": 2, "name": "Churro Chocolate", "price": 1800, "image": "https://www.recetasnestle.com.pe/sites/default/files/srh_recipes/908133d815ef9066e4abfb330e7c33d9.png"},
-    {"id": 3, "name": "Churro Fresa", "price": 1500, "image": "https://www.buenprovecho.hn/wp-content/uploads/2022/04/churros-con-glaseado-de-fresa.png"}
+#   {"id": 1, "name": "Vaso de Churros", "price": 2000, "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQS6W7wzGPjTe1Dh8Bx_U-el19rwVaUiOhMRQ&s"},
+    {"id": 1, "name": "Churro Chocolate", "price": 1500, "image": "/static/VasodChurros.png"}
+    {"id": 2, "name": "Churro Eventos Especiales", "price": 1800, "image": "https://www.recetasnestle.com.pe/sites/default/files/srh_recipes/908133d815ef9066e4abfb330e7c33d9.png"},
+#    {"id": 3, "name": "Churro Fresa", "price": 1500, "image": "https://www.buenprovecho.hn/wp-content/uploads/2022/04/churros-con-glaseado-de-fresa.png"}
 ]
 
 # Página principal
