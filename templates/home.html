@@ -3,8 +3,11 @@
 {% block title %}Inicio - ChurroLand{% endblock %}
 
 {% block content %}
-    <h1 class="text-center my-4">Bienvenido a ChurroLand "Donde el sabor se pinta de colores" 🎉</h1>
-    
+    <div class="text-center my-4">
+        <h1 class="fw-bold">Bienvenido a ChurroLand</h1>
+        <h4 class="text-muted">"Donde el sabor se pinta de colores" 🎉</h4>
+    </div>
+
     <div class="row">
         {% for p in products %}
             <div class="col-md-4 mb-4">
@@ -20,6 +23,7 @@
         {% endfor %}
     </div>
 {% endblock %}
+
 
 
 
