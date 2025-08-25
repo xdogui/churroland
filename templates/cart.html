@@ -25,7 +25,7 @@
                 {% for item in cart %}
                 <tr>
                     <td>{{ item.name }}</td>
-                    <td>${{ item.price }}</td>
+                    <td>₡{{ item.price }}</td>
                     <td>{{ item.quantity }}</td>
                     <td>₡{{ item.price * item.quantity }}</td>
                     <td>
@@ -35,7 +35,7 @@
                 {% endfor %}
             </tbody>
         </table>
-        <h3 class="text-end">💵 Total: ${{ total }}</h3>
+        <h3 class="text-end">💵 Total: ₡{{ total }}</h3>
         <div class="text-center mt-4">
             <a href="/" class="btn btn-primary">Seguir Comprando</a>
             <a href="/checkout" class="btn btn-success">Finalizar Compra ✅</a>
@@ -47,6 +47,7 @@
         </div>
     {% endif %}
 {% endblock %}
+
 
 
 
