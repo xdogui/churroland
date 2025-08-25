@@ -7,8 +7,8 @@ app.secret_key = "supersecretkey"
 PRODUCTS = [
     {"id": 1, "name": "ChurroParty", "price": 2000, "image": "/static/images/VasodChurro.jpg"},
 #   {"id": 1, "name": "Churro Arcoiris", "price": 2000, "image": "/static/churro_arcoiris.jpg"}
-    {"id": 2, "name": "Churro Chocolate", "price": 1800, "image": "https://www.recetasnestle.com.pe/sites/default/files/srh_recipes/908133d815ef9066e4abfb330e7c33d9.png"},
-    {"id": 3, "name": "Churro Fresa", "price": 1500, "image": "https://www.buenprovecho.hn/wp-content/uploads/2022/04/churros-con-glaseado-de-fresa.png"}
+    {"id": 2, "name": "Churro Chocolate", "price": 1800, "image": "/static/images/ChurroChoco.png"},
+    {"id": 3, "name": "Churro Fresa", "price": 1500, "image": "/static/images/ChurroFresa.png"}
 ]
 
 # Página principal
@@ -57,6 +57,7 @@ import os
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
     app.run(host="0.0.0.0", port=port)
+
 
 
 
