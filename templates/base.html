@@ -9,7 +9,15 @@
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
-            <a class="navbar-brand" href="/">🌈 ChurroLand</a>
+            <a class="navbar-brand d-flex align-items-center" href="/">
+                <!-- Logo -->
+                <img src="{{ url_for('static', filename='images/Churroland_Logo.png') }}" 
+                     alt="ChurroLand Logo" 
+                     width="40" height="40" 
+                     class="d-inline-block align-text-top me-2">
+                <!-- Texto -->
+                <span>ChurroLand</span>
+            </a>
             <div class="collapse navbar-collapse">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
@@ -34,6 +42,7 @@
     </footer>
 </body>
 </html>
+
 
 
 
