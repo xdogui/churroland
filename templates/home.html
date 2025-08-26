@@ -10,7 +10,7 @@
 
 <div class="row">
     {% for p in products %}
-        <div class="col-md-3 mb-4">
+        <div class="col-6 col-md-3 mb-4">
             <div class="card shadow-sm h-100">
                 <img src="{{ p.image }}" class="card-img-top" alt="{{ p.name }}">
                 <div class="card-body text-center">
@@ -23,6 +23,7 @@
     {% endfor %}
 </div>
 {% endblock %}
+
 
 
 
