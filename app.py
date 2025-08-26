@@ -9,7 +9,7 @@ PRODUCTS = [
 #   {"id": 1, "name": "Churro Arcoiris", "price": 2000, "image": "/static/churro_arcoiris.jpg"}
     {"id": 2, "name": "Churro Chocolate", "price": 1800, "image": "/static/images/ChurroChoco.png"},
     {"id": 3, "name": "Churro Caramelo", "price": 1700, "image": "/static/images/ChurroCaramelo.png"}
-    {"id": 4, "name": "Churro Fresa", "price": 1500, "image": "/static/images/ChurroFresa.png"}
+#    {"id": 4, "name": "Churro Fresa", "price": 1500, "image": "/static/images/ChurroFresa.png"}
 ]
 
 # Página principal
@@ -58,6 +58,7 @@ import os
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
     app.run(host="0.0.0.0", port=port)
+
 
 
 
