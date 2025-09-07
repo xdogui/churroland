@@ -1,4 +1,5 @@
-from flask import Flask, render_template, session, redirect, url_for
+from flask import Flask, render_template, session, redirect, url_for, flash
+
 
 app = Flask(__name__)
 app.secret_key = "supersecretkey"
@@ -17,7 +18,6 @@ PRODUCTS = [
 def home():
     return render_template("home.html", products=PRODUCTS)
 
-# Agregar producto al carrito
 @app.route("/add/<int:product_id>")
 def add_to_cart(product_id):
     product = next((p for p in PRODUCTS if p["id"] == product_id), None)
@@ -26,9 +26,11 @@ def add_to_cart(product_id):
         for item in cart:
             if item["id"] == product_id:
                 item["quantity"] += 1
+                flash(f"➕ Se agregó otra unidad de {product['name']} al carrito 🛒", "info")
                 break
         else:
             cart.append({"id": product["id"], "name": product["name"], "price": product["price"], "quantity": 1})
+            flash(f"✅ {product['name']} agregado al carrito 🛒", "success")
         session["cart"] = cart
     return redirect(url_for("home"))
 
@@ -58,6 +60,7 @@ import os
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
     app.run(host="0.0.0.0", port=port)
+
 
 
 
