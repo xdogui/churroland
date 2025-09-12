@@ -61,11 +61,18 @@ if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
     app.run(host="0.0.0.0", port=port)
 
+@app.route("/nosotros")
+def nosotros():
+    return render_template("nosotros.html")
 
+@app.route("/sabores")
+def sabores():
+    return render_template("sabores.html")
 
+@app.route("/eventos")
+def eventos():
+    return render_template("eventos.html")
 
-
-
-
-
-
+@app.route("/contacto")
+def contacto():
+    return render_template("contacto.html")
