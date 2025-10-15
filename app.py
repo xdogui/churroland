@@ -87,7 +87,7 @@ def send_order():
     mensaje += f"\n💰 *Total:* ₡{total}\n"
 
     # Número de WhatsApp (formato internacional sin + ni espacios)
-    numero_whatsapp = "50687368883"  # 👈 Cambia por tu número
+    numero_whatsapp = "50661974424"  # 👈 Cambia por tu número
 
     # Generar link de WhatsApp
     mensaje_encoded = urllib.parse.quote(mensaje)
@@ -120,3 +120,4 @@ def contacto():
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
     app.run(host="0.0.0.0", port=port)
+
