@@ -1,5 +1,5 @@
-from flask import Flask, render_template, session, redirect, url_for, flash
-
+from flask import Flask, render_template, session, redirect, url_for, flash, request
+import urllib.parse
 
 app = Flask(__name__)
 app.secret_key = "supersecretkey"
@@ -76,3 +76,46 @@ def eventos():
 @app.route("/contacto")
 def contacto():
     return render_template("contacto.html")
+
+@app.route("/checkout")
+def checkout():
+    cart = session.get("cart", [])
+    if not cart:
+        flash("Tu carrito está vacío 🛒", "info")
+        return redirect(url_for("cart"))
+    return render_template("checkout.html")
+
+@app.route("/send_order", methods=["POST"])
+def send_order():
+    nombre = request.form.get("nombre")
+    apellido = request.form.get("apellido")
+    telefono = request.form.get("telefono")
+    direccion = request.form.get("direccion")
+
+    cart = session.get("cart", [])
+    total = sum(item["price"] * item["quantity"] for item in cart)
+
+    # Crear mensaje de WhatsApp
+    mensaje = f"🧾 *Nuevo Pedido de ChurroLand* 🧾\n"
+    mensaje += f"👤 Cliente: {nombre} {apellido}\n"
+    mensaje += f"📞 Teléfono: {telefono}\n"
+    if direccion:
+        mensaje += f"📍 Dirección: {direccion}\n"
+    mensaje += "\n🛍️ *Productos:*\n"
+    for item in cart:
+        mensaje += f"- {item['name']} x{item['quantity']} = ₡{item['price'] * item['quantity']}\n"
+    mensaje += f"\n💰 *Total:* ₡{total}\n"
+
+    # Número de WhatsApp (en formato internacional, sin + ni espacios)
+    numero_whatsapp = "50687368883"  # 👈 pon aquí tu número, ej: 50688887777
+
+    # Generar link de WhatsApp
+    mensaje_encoded = urllib.parse.quote(mensaje)
+    whatsapp_url = f"https://wa.me/{numero_whatsapp}?text={mensaje_encoded}"
+
+    # Limpiar carrito
+    session.pop("cart", None)
+
+    # Redirigir al enlace de WhatsApp
+    return redirect(whatsapp_url)
+
