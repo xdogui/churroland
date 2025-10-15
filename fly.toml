@@ -1,10 +1,10 @@
-# fly.toml app configuration file generated for churroland on 2025-09-12T17:58:45Z
+# fly.toml app configuration file generated for churroland on 2025-10-15T00:37:53Z
 #
 # See https://fly.io/docs/reference/configuration/ for information about how to use this file.
 #
 
 app = 'churroland'
-primary_region = 'mia'
+primary_region = 'iad'
 
 [build]
 
